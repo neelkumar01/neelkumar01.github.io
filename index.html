@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Neel Kumar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=Newsreader:opsz,wght@14..62,400;14..62,500;14..62,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="/assets/web-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Betania+Patmos+In&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap"
+        rel="stylesheet">
+    <style>
+        .playwrite-de-grund-HeadingFont {
+            font-family: "Playwrite DE Grund", cursive;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .betania-patmos-in-regular {
+            font-family: "Betania Patmos In", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .sue-ellen-francisco-regular {
+            font-family: "Sue Ellen Francisco", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .nunito-NUNITO {
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Nunito", sans-serif;
+            font-weight: 600;
+            background: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 50;
+            padding: 1rem 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: "Betania Patmos In", cursive;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d2d2d;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #000000;
+            border-bottom-color: #ff0084;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #006aff;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        .about-page {
+            padding: 4rem 0 3rem;
+        }
+
+        .top-row {
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-photo {
+            flex-shrink: 0;
+            width: 300px;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            border: 1px solid #eee;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .brief-intro {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        .brief-intro p {
+            font-size: 1.14rem;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+
+        .brief-intro p strong {
+            color: #111;
+            font-weight: 600;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2.2rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .social-links a {
+            color: #3c3c3c;
+            font-size: 1.4rem;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: #111;
+        }
+
+        .email-line {
+            font-size: 1.05rem;
+            color: #3c3c3c;
+        }
+
+        .email-line a {
+            color: #111;
+            text-decoration: none;
+            border-bottom: 1.2px solid #ffffff;
+            transition: border-color 0.2s;
+        }
+
+        .email-line a:hover {
+            border-bottom-color: #2f2f2f;
+            border-bottom-width: 2px;
+        }
+
+        .section-divider {
+            border-top: 1px solid #e4e4e4;
+            margin: 3rem 0;
+        }
+
+        .deep-section {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .deep-section h2 {
+            font-family: "Playwrite DE Grund", cursive;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c2c2c;
+            margin-bottom: 1.8rem;
+        }
+
+        .deep-section h3 {
+            font-family: "Playwrite DE Grund", cursive;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #222;
+            margin: 2.5rem 0 1.2rem;
+            letter-spacing: -0.3px;
+        }
+
+        .deep-section p {
+            font-size: 1.14rem;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 1.4rem;
+        }
+
+        .deep-section p strong {
+            font-weight: 600;
+            color: #111;
+        }
+
+        .deep-section p em {
+            font-style: italic;
+            color: #333;
+        }
+
+        .quote-box {
+            background: #fafafa;
+            border-left: 3px solid #ff8800;
+            padding: 1.5rem 2rem;
+            margin: 2.5rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .quote-box p {
+            font-family: "Playwrite DE Grund", cursive;
+            font-size: 1rem;
+            font-style: italic;
+            color: #333;
+            line-height: 2;
+            margin-bottom: 0.5rem;
+        }
+
+        .quote-box .attribution {
+            font-size: 1rem;
+            color: #787878;
+            text-align: right;
+        }
+
+        .deep-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0 2rem;
+        }
+
+        .deep-section li {
+            font-size: 1.1rem;
+            color: #232323;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f5f5f5;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .deep-section li::before {
+            content: "—";
+            color: #bbb;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 700px) {
+            .top-row {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-photo {
+                width: 180px;
+                align-self: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .deep-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .me-img {
+            filter: grayscale(100%);
+            transition: filter 0.5s ease, transform 0.4s ease;
+        }
+
+        .me-img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        .social-links a i {
+            transition: transform 0.2s ease;
+            display: inline-block;
+            /* required for transform to work on inline elements */
+        }
+
+        .social-links a:hover i {
+            transform: scale(1.3);
+            /* 1.3 = 30% bigger; adjust as you like */
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">Neel Kumar</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">About</a></li>
+                <li><a href="">Publications</a></li>
+                <li><a href="">Projects</a></li>
+                <li><a href="">Experience</a></li>
+                <li><a href="">Blogs</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="about-page">
+            <div class="top-row">
+                <div class="profile-photo">
+                    <img src="/assets/me.png" alt="Neel Kumar" class="me-img" loading="lazy">
+                </div>
+                <div class="brief-intro">
+                    <p>
+                        Hi, I am Neel - an undergraduate student at Delhi Technological University with strong interest
+                        in AI but also naturally curious about other fields as well like biology, maths and space.
+                    </p>
+                    <p>
+                        I am currently working in field of machine learning and deep learning from both sides - as a
+                        researcher who likes to understand ideas deeply and as an engineer who enjoys building things.
+                    </p>
+                    <p>
+                        As of now, I'm enjoying the process of learning, experimenting and working on problems that feel
+                        meaningful to me :)
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Scholar" style="color: #006aff;"><i
+                                class="fas fa-graduation-cap"></i></a>
+                        <a href="https://github.com/neelkumar01" target="_blank" aria-label="GitHub"
+                            style="color: #272727;"><i class="fab fa-github"></i></a>
+                        <a href="https://x.com/neelKr_" target="_blank" aria-label="Twitter" style="color: #272727;"><i
+                                class="fab fa-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/neelkumar01/" target="_blank" aria-label="LinkedIn"
+                            style="color: #1a6ee2;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://orcid.org/0009-0005-0555-9596" target="_blank" aria-label="ORCID"
+                            style="color: #8ce11c;"><i class="fab fa-orcid"></i></a>
+                    </div>
+                    <div class="email-line">
+                        <i class="far fa-envelope"></i>&nbsp;&nbsp;<a
+                            href="mailto:neelkumar247me@gmail.com">neelkumar247me@gmail.com</a>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="deep-section">
+                <h2>About me</h2>
+                <p>
+                    I am mostly self learning AI, machine learning, deep learning and related areas by trying to
+                    understand ideas from first principles and applying them on research and real projects
+                </p>
+                <p>
+                    A major part of my current work is with the <span style="color: #ff006f; background-color: #ffe4ed85; padding: 2px 6px; border-radius: 10px; font-weight: 650;">Microbotics Research Project</span>, where I am working with a
+                    global team of researchers on the idea of preventing heart attack before they happen. My work here
+                    is focused on computational navigation, reinforcement learning, digital twins, swarm modelling and
+                    behaviour, and navigation policy
+                </p>
+                <p>
+                    Alongside this, I am also involved in long term research on clinical machine learning and deep
+                    learning with Soham Biren K. under Medical AI Research Institute, <span style="color: #9500ff; background-color: #f7e4ff89; padding: 2px 6px; border-radius: 10px; font-weight: 650;">MAIRI</span> and this work is helping me explore how machine learning can be used in
+                    healthcare related problems
+                </p>
+                <p>
+                    I am also working with the <span style="color: #0051ff; background-color: #e4f1ff85; padding: 2px 6px; border-radius: 10px; font-weight: 650;">CDSS Engineering Team</span> under Ritika Saha and Alireza Hayati as part of the
+                    AI/ML Analysis Working Group at the NASA Open Science Data Repository. The work focuses on
+                    AI/ML driven clinical decision support systems, health monitoring frameworks, agent-based
+                    architectures, and data-driven approaches for autonomous medical decision-making in deep-space
+                    environments
+                </p>
+                <p>
+                    Apart from research, I am also exploring <span style="border-bottom: 2.5px solid #ff8400; font-weight: 650;">Open Source Development</span>. I see open source
+                    as a good way to learn by building, understand real world codebases, and contribute to projects that
+                    are used by other people 
+                </p>
+
+                <h3>Beyond my work</h3>
+                <p>
+                    I care deeply about the planet. Climate change and the possibility of a sixth mass extinction
+                    genuinely worry me. I don’t know yet exactly how I want to contribute in that direction, but I know
+                    it is something I care about and want to stay connected to as I grow 🌷
+                </p>
+                <p>
+                    <span style="color: #238926; background-color: #dcfedb85; padding: 2px 6px; border-radius: 10px; font-weight: 650;">Blue Green Origins</span> is my first small step in that direction. I don’t know yet what it will become or
+                    what I’ll do through it, but for now, it represents something I honestly care about — nature,
+                    climate, biodiversity, and the living world around us - something I like observing them, reading
+                    about them, and even just listening to people talk about them
+                </p>
+
+                <div class="quote-box">
+                    <p>"The real question is not whether life exists after death, the real question is whether you are
+                        alive before death"
+                    </p>
+                    <div class="attribution">— A note to self</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        menuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+        document.querySelectorAll('#navLinks a').forEach(link => {
+            link.addEventListener('click', () => { navLinks.classList.remove('active'); });
+        });
+    </script>
+</body>
+
+</html>
